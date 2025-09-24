@@ -1,0 +1,127 @@
+{
+  "defaultTemplate": "report.ejs",
+  "assessments": {
+    "as_hr_02": {
+      "title": "Health & Fitness Assessment",
+      "sections": [
+        {
+          "id": "key_vitals",
+          "title": "Key Body Vitals",
+          "fields": [
+            { "label": "Overall Health Score", "path": "accuracy" },
+            { "label": "Heart Rate", "path": "vitalsMap.vitals.heart_rate" },
+            { "label": "BP (Sys)", "path": "vitalsMap.vitals.bp_sys" },
+            { "label": "BP (Dia)", "path": "vitalsMap.vitals.bp_dia" },
+            { "label": "Weight", "path": "weight" }
+          ]
+        },
+
+        {
+          "id": "body_composition",
+          "title": "Body Composition",
+          "fields": [
+            { "label": "BMI", "path": "bodyCompositionData.BMI" },
+            { "label": "Body Fat %", "path": "bodyCompositionData.BFC" },
+            { "label": "Lean Mass", "path": "bodyCompositionData.LM" }
+          ]
+        },
+        {
+          "id": "fitness_levels",
+          "title": "Fitness / Performance",
+          "fields": [
+            {
+              "label": "Jog Test Time (sec)",
+              "path": "exercises[?(@.id==235)].setList[0].time",
+              "note": "Find exercise id 235 and take setList[0].time"
+            }
+          ]
+        }
+      ],
+      "classifications": {
+        "BMI": [
+          { "min": 0, "max": 18.5, "label": "Underweight" },
+          { "min": 18.5, "max": 24.9, "label": "Normal" },
+          { "min": 25, "max": 29.9, "label": "Overweight" },
+          { "min": 30, "max": 1000, "label": "Obese" }
+        ]
+      }
+    },
+
+    "as_card_01": {
+      "title": "Cardiac Assessment",
+      "sections": [
+        {
+          "id": "key_vitals",
+          "title": "Key Body Vitals",
+          "fields": [
+            { "label": "Overall Health Score", "path": "accuracy" },
+            { "label": "Heart Rate", "path": "vitalsMap.vitals.heart_rate" },
+            { "label": "BP (Sys)", "path": "vitalsMap.vitals.bp_sys" },
+            { "label": "BP (Dia)", "path": "vitalsMap.vitals.bp_dia" }
+          ]
+        },
+        {
+          "id": "cardio",
+          "title": "Cardiovascular Endurance",
+          "fields": [
+            {
+              "label": "Jog Test Time (sec)",
+              "path": "exercises[?(@.id==235)].setList[0].time"
+            }
+          ]
+        },
+        {
+          "id": "body_composition",
+          "title": "Body Composition",
+          "fields": [{ "label": "BMI", "path": "bodyCompositionData.BMI" }]
+        }
+      ],
+      "classifications": {
+        "BMI": [
+          { "min": 0, "max": 18.5, "label": "Underweight" },
+          { "min": 18.5, "max": 24.9, "label": "Normal" },
+          { "min": 25, "max": 29.9, "label": "Overweight" },
+          { "min": 30, "max": 1000, "label": "Obese" }
+        ]
+      }
+    },
+    "as_card_05": {
+      "title": "Cardiac Assessment 5",
+      "sections": [
+        {
+          "id": "key_vitals",
+          "title": "Key Body Vitals",
+          "fields": [
+            { "label": "Overall Health Score", "path": "accuracy" },
+            { "label": "Heart Rate", "path": "vitalsMap.vitals.heart_rate" },
+            { "label": "BP (Sys)", "path": "vitalsMap.vitals.bp_sys" },
+            { "label": "BP (Dia)", "path": "vitalsMap.vitals.bp_dia" }
+          ]
+        },
+        {
+          "id": "cardio",
+          "title": "Cardiovascular Endurance",
+          "fields": [
+            {
+              "label": "Jog Test Time (sec)",
+              "path": "exercises[?(@.id==235)].setList[0].time"
+            }
+          ]
+        },
+        {
+          "id": "body_composition",
+          "title": "Body Composition",
+          "fields": [{ "label": "BMI", "path": "bodyCompositionData.BMI" }]
+        }
+      ],
+      "classifications": {
+        "BMI": [
+          { "min": 30, "max": 1000, "label": "Obese" },
+          { "min": 25, "max": 29.9, "label": "Overweight" },
+          { "min": 18.5, "max": 24.9, "label": "Normal" },
+          { "min": 0, "max": 18.5, "label": "Underweight" }
+        ]
+      }
+    }
+  }
+}
