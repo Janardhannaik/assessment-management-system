@@ -1,21 +1,3 @@
-// // utils/authMiddleware.js
-// const jwt = require("jsonwebtoken");
-// const secret = process.env.JWT_SECRET || "dev_secret";
-
-// function authMiddleware(req, res, next) {
-//   const auth = req.headers.authorization;
-//   if (!auth) return res.status(401).json({ error: "missing token" });
-//   const token = auth.replace("Bearer ", "");
-//   try {
-//     const payload = jwt.verify(token, secret);
-//     req.user = payload;
-//     next();
-//   } catch (err) {
-//     return res.status(401).json({ error: "invalid token" });
-//   }
-// }
-
-// module.exports = authMiddleware;
 // utils/authMiddleware.js
 const jwt = require("jsonwebtoken");
 const secret = process.env.JWT_SECRET || "dev_secret";
